@@ -1,32 +1,23 @@
-import React from 'react'
-import Product from './comp/Product'
-import styles from './App.module.css'
+import React, {useState} from 'react'
 
 
 function App() {
+  const [count, setCount] = useState(0)
+
+  const increment = () => {
+    setCount(count + 1)
+  }
+
+  const decrement = () => {
+    setCount(count - 1)
+  }
   return (
     <div>
-      <h1>Larning Props!</h1>
-      <h2 className={styles.error}>An error occurred</h2>
-
-      <Product
-        name="Amazon eco"
-        description="your AI assit."
-        price={59.99}
-      />
-      
-      <Product
-        name="Google Home"
-        description="your AI assit."
-        price={59.99}
-      />
-
-      <Product
-        name="Apple homepage"
-        description="your AI assit."
-        price={59.99}
-      />
-      
+      <h1>Larning useState!</h1>
+      <h1>Welcome to my counter</h1>
+      <p>This count is: {count}</p>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
     </div>
   );
 }
